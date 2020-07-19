@@ -9,4 +9,4 @@ This program solves a generalized version of the problem for which the maths beh
 
 - *d* = number of dimensions (>= 0)
 
-Those two arguments will determine the size of the board (*n* = *a*^*d*). The dice value in each square of the board and the magic square are generated randomly. Calculation are done on vectors of size *d* using modulo *a* arithmetic.
+Those two arguments will determine the size of the board (*n* = *a*^*d*). The dice value in each square of the board and the magic square are generated randomly. Calculations are done on vectors of size *d* using modulo *a* arithmetic.
