@@ -61,8 +61,7 @@ class PrisonersPuzzle
 	end
 
 	def flip(pos)
-		@board[pos] += @a-1
-		@board[pos] %= @a
+		@board[pos] = (@board[pos]+@a-1)%@a
 	end
 
 	def prisoner2
@@ -73,18 +72,12 @@ class PrisonersPuzzle
 		if @a < 2
 			return false
 		end
-		puts "board size #{@n}"
-		puts "board for prisoner1 #{@board}"
-		puts "jailer selected square #{@magic}"
-
 		square1 = prisoner1
 		flip(square1)
 		puts "prisoner1 flipped square #{square1}"
-		puts "board for prisoner2 #{@board}"
-
+		puts "board after flip #{@board}"
 		square2 = prisoner2
 		puts "prisoner2 selected square #{square2}"
-
 		@magic == square2
 	end
 
@@ -97,11 +90,14 @@ class PrisonersPuzzle
 			@d = d
 		end
 		@n = @a**@d
+		puts "board size #{@n}"
 		@board = Array.new
 		@n.times do
 			@board.push(rand(@a))
 		end
+		puts "board #{@board}"
 		@magic = rand(@n)
+		puts "jailer selected square #{@magic}"
 	end
 end
 
